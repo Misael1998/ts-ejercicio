@@ -10,16 +10,28 @@ const crecimiento = (
   let poblacionAcumulada = 0;
   for (let i = 0; i <= anios; i++) {
     if (i == 0) {
-      prediccionPoblacional.push(poblacionInicial);
+      prediccionPoblacional.push({
+        poblacion: poblacionInicial,
+        nacidos: 0,
+        muertos: 0,
+        migrantes: 0,
+        inmigrantes: 0,
+      });
       poblacionAcumulada = poblacionInicial;
     } else {
-      poblacionAcumulada +=
-        poblacionAcumulada * tasaNatalidad -
-        poblacionAcumulada * tasaMortalidad +
-        poblacionAcumulada * inmigracion -
-        poblacionAcumulada * migracion;
+      const nacidos = Math.ceil(poblacionAcumulada * tasaNatalidad);
+      const muertos = Math.ceil(poblacionAcumulada * tasaMortalidad);
+      const inmigrantes = Math.ceil(poblacionAcumulada * inmigracion);
+      const migrantes = Math.ceil(poblacionAcumulada * migracion);
+      poblacionAcumulada += nacidos - muertos + inmigrantes - migrantes;
 
-      prediccionPoblacional.push(Math.ceil(poblacionAcumulada));
+      prediccionPoblacional.push({
+        poblacion: poblacionAcumulada,
+        nacidos,
+        muertos,
+        migrantes,
+        inmigrantes,
+      });
     }
   }
   return prediccionPoblacional;
