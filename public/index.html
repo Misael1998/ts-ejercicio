@@ -22,7 +22,9 @@
     </header>
     <main>
       <section class="charts-container">
-        <canvas id="dispertion-graph" class="graph" width="400" height="250"></canvas>
+        <div class="graph-container">
+          <canvas id="dispertion-graph" class="graph"></canvas>
+        </div>
         <div class="growth-container">
           <div>
             <p>Total nacimientos: <strong>450</strong></p>
@@ -31,7 +33,9 @@
             <p>Total muertes: <strong>200</strong></p>
           </div>
         </div>
-        <canvas id="linear-graph" class="graph" width="400" height="250"></canvas>
+        <div class="graph-container">
+          <canvas id="linear-graph" class="graph"></canvas>
+        </div>
       </section>
       <section class="form-container">
         <form class="form" id="form">
@@ -78,7 +82,7 @@
               Calcular crecimiento
             </button>
             <button class="button" type="submit">
-              Limpiar 
+              Limpiar
             </button>
           </div>
         </form>

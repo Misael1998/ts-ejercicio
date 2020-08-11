@@ -4,6 +4,9 @@ const linearGraph = document.getElementById("linear-graph");
 const linearChart = new Chart(linearGraph, {
   type: 'line',
   data: [0,10,20,30],
+  options: {
+    responsive: true
+  }
 })
 
 const dispertionChart = new Chart(dispertionGraph,{
@@ -22,5 +25,8 @@ const dispertionChart = new Chart(dispertionGraph,{
           y: 5
       }]
   }]
+  },
+  options: {
+    responsive: true
   }
 })
