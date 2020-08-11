@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Crecimiento Poblacional</title>
 
     <!-- update the version number as needed -->
@@ -16,44 +17,87 @@
     <!-- <script defer src="/__/firebase/init.js"></script> -->
   </head>
   <body>
-    <h1>Crecimiento Poblacional</h1>
-    <br />
-    <form id="form">
-      <div>
-        <label for="poblacion-inicial">Poblacion Inicial</label>
-        <input type="text" id="poblacion-inicial" />
-      </div>
-      <div>
-        <label for="anios">Años</label>
-        <input type="text" id="anios" />
-      </div>
-      <div>
-        <label for="tasa-mortalidad"
-          >Tasa de mortalidad (porcentaje entre 0 y 100)</label
-        >
-        <input type="text" id="tasa-mortalidad" />
-      </div>
-      <div>
-        <label for="tasa-natalidad"
-          >Tasa de natalidad (porcentaje entre 0 y 100)</label
-        >
-        <input type="text" id="tasa-natalidad" />
-      </div>
-      <div>
-        <label for="tasa-migracion"
-          >Tasa de migracion (porcentaje entre 0 y 100)</label
-        >
-        <input type="text" id="tasa-migracion" />
-      </div>
-      <div>
-        <label for="tasa-inmigracion"
-          >Tasa de inmigracion (porcentaje entre 0 y 100)</label
-        >
-        <input type="text" id="tasa-inmigracion" />
-      </div>
-      <button type="submit">Cacular el crecimiento poblacional</button>
-    </form>
+    <header>
+      <h1>Crecimiento Poblacional</h1>
+    </header>
+    <main>
+      <section class="charts-container">
+        <canvas id="dispertion-graph" class="graph" width="400" height="250"></canvas>
+        <canvas id="linear-graph" class="graph" width="400" height="250"></canvas>
+      </section>
+      <section class="form-container">
+        <form class="form" id="form">
+          <div class="form__main-inputs">
+            <div class="form__input">
+              <label class="input__label" for="poblacion-inicial"
+                >Población inicial</label
+              >
+              <input type="text" id="poblacion-inicial" />
+            </div>
+            <div class="form__input">
+              <label class="input__label" for="anios">Años</label>
+              <input type="text" id="anios" />
+            </div>
+          </div>
+          <div class="form__stats">
+            <div class="form__input">
+              <label class="input__label" for="tasa-mortalidad"
+                >Tasa de mortalidad
+              </label>
+              <input type="text" id="tasa-mortalidad" />
+            </div>
+            <div class="form__input">
+              <label class="input__label" for="tasa-natalidad"
+                >Tasa de natalidad
+              </label>
+              <input type="text" id="tasa-natalidad" />
+            </div>
+            <div class="form__input">
+              <label class="input__label" for="tasa-migracion"
+                >Tasa de migración
+              </label>
+              <input type="text" id="tasa-migracion" />
+            </div>
+            <div class="form__input">
+              <label class="input__label" for="tasa-inmigracion"
+                >Tasa de inmigración
+              </label>
+              <input type="text" id="tasa-inmigracion" />
+            </div>
+          </div>
+          <div class="button-container">
+            <button class="button" type="submit">
+              Calcular crecimiento
+            </button>
+            <button class="button" type="submit">
+              Limpiar 
+            </button>
+          </div>
+        </form>
+        <section class="stats-container">
+          <div class="stat-card">
+            <h3>Natalidad</h3>
+            <p>1</p>
+          </div>
+          <div class="stat-card">
+            <h3>Mortalidad</h3>
+            <p>1</p>
+          </div>
+          <div class="stat-card">
+            <h3>Emigración</h3>
+            <p>1</p>
+          </div>
+          <div class="stat-card">
+            <h3>Inmigración</h3>
+            <p>1</p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="./js/crecimiento.js"></script>
+    <script src="./js/chart.js"></script>
     <script src="./js/index.js"></script>
     <!-- <script>
       document.addEventListener("DOMContentLoaded", function () {
