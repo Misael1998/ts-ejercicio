@@ -26,7 +26,6 @@ function generarPrediccion(e) {
       parseInt(_tasaMigracion.value) / 100,
       parseInt(_tasaInmigracion.value) / 100
     );    
-    console.log(prediccion);
     llenarChart(prediccion);
     document.getElementById('c-tasa-nat').innerHTML = _tasaNatalidad.value; 
     document.getElementById('c-tasa-mot').innerHTML = _tasaMortalidad.value; 

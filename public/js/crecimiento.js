@@ -23,7 +23,7 @@ const crecimiento = (
       const muertos = Math.ceil(poblacionAcumulada * tasaMortalidad);
       const inmigrantes = Math.ceil(poblacionAcumulada * inmigracion);
       const migrantes = Math.ceil(poblacionAcumulada * migracion);
-      poblacionAcumulada += nacidos - muertos + inmigrantes - migrantes;
+      poblacionAcumulada += (nacidos - muertos) + (inmigrantes - migrantes);
 
       prediccionPoblacional.push({
         poblacion: poblacionAcumulada,

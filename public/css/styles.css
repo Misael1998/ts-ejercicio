@@ -37,16 +37,14 @@ header {
 main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin: 10px 50px;
+  gap: 15px;
+  padding: 20px;
 }
 
-.form-container {
-  padding: 18px;
-}
+
 
 .form {
-  padding: 45px;
+  padding: 40px;
   background-color: white;
   box-shadow: var(--shadows);
   border-radius: 20px;
@@ -55,11 +53,7 @@ main {
 .charts-container{
   background-color: white;
   border-radius: 20px;
-  padding: 50px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin: auto;
-  margin-top: 18px;
+  padding: 15px 45px 15px;
   box-shadow: var(--shadows);
   /* box-shadow: 5px 6px 20px 10px #c5c5c54f; */
 }
