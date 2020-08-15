@@ -55,8 +55,11 @@ header a:hover {
 
 .history-container {
   width: 80%;
-  padding: 40px 20px;
-  margin: 0 auto;
+  padding: 40px;
+  margin: 40px auto;
+  background-color: white;
+  box-shadow: var(--shadows);
+  border-radius: 20px;
 }
 
 .primary {
