@@ -2,7 +2,7 @@
 
 :root {
   /* Colors */
-  --primary-color: #2B7BF7;
+  --primary-color: #2b7bf7;
   --secondary-color: #266ddb;
   --background-color: #f5f3f5;
   --borders-color: #e5e5e5;
@@ -28,8 +28,40 @@ body {
 header {
   padding: 20px;
   padding-left: 78px;
-  background: linear-gradient(42deg, rgba(43,123,247,1) 35%, rgba(85,151,255,1) 63%);
+  background: linear-gradient(
+    42deg,
+    rgba(43, 123, 247, 1) 35%,
+    rgba(85, 151, 255, 1) 63%
+  );
   color: var(--primary-font-color);
+}
+
+header h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* -----------------------History----------------------------- */
+
+.history-container {
+  width: 80%;
+  padding: 40px 20px;
+  margin: 0 auto;
+}
+
+.primary {
+  background-color: var(--primary-color);
+  color: white;
 }
 
 /*-----------------------Main-------------------------- */
@@ -41,8 +73,6 @@ main {
   padding: 20px;
 }
 
-
-
 .form {
   padding: 40px;
   background-color: white;
@@ -50,7 +80,7 @@ main {
   border-radius: 20px;
 }
 
-.charts-container{
+.charts-container {
   background-color: white;
   border-radius: 20px;
   padding: 15px 45px 15px;
@@ -124,7 +154,7 @@ main {
 }
 
 .dropdown .dropbtn {
-  font-size: 16px;  
+  font-size: 16px;
   border: none;
   outline: none;
   color: white;
@@ -139,7 +169,7 @@ main {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 20px;
 }
@@ -178,7 +208,7 @@ main {
   padding: 10px 35px;
   border-radius: 20px;
   color: var(--primary-font-color);
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
 }
 
 .stat-card h3 {
@@ -190,7 +220,7 @@ main {
 .stat-card p {
   font-size: 2.3em;
   font-weight: 900;
-  color: #2B7BF7;
+  color: #2b7bf7;
   margin-top: -10px;
 }
 
@@ -198,7 +228,7 @@ main {
   content: "%";
   font-size: 0.6em;
   font-weight: bold;
-  color: #CBCBCB;
+  color: #cbcbcb;
 }
 
 .graph-container {

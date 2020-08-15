@@ -7,48 +7,50 @@
     <link rel="shortcut icon" href="../logo.png" />
     <title>Crecimiento Poblacional</title>
     <!-- include only the Firebase features as you need -->
-   <!--  <script src="/__/firebase/7.17.1/firebase-app.js"></script> -->
+    <!--  <script src="/__/firebase/7.17.1/firebase-app.js"></script> -->
     <!-- <script defer src="/__/firebase/7.17.1/firebase-database.js"></script>
     <script defer src="/__/firebase/7.17.1/firebase-messaging.js"></script>
     <script defer src="/__/firebase/7.17.1/firebase-storage.js"></script> -->
     <!-- initialize the SDK after all desired features are loaded -->
-   <!--  <script defer src="/__/firebase/init.js"></script> -->
+    <!--  <script defer src="/__/firebase/init.js"></script> -->
   </head>
   <body>
     <header>
       <div style="display: inline-block;">
-        <h1>Crecimiento Poblacional</h1>
+        <a href="index.html"><h1>Crecimiento Poblacional</h1></a>
       </div>
       <div style="float: right;">
         <!-- <button class="button" style="width: fit-content; height: fit-content; margin-top: 0; font-size: 1rem;">info</button> -->
         <div class="dropdown">
-          <button class="dropbtn">More + 
+          <button class="dropbtn">
+            More +
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
             <a href="https://github.com/Misael1998/ts-ejercicio">Repositorio</a>
+            <a href="history.html">Historial</a>
           </div>
         </div>
       </div>
     </header>
     <main>
       <!-- <section class="form-container"> -->
-        <section class="charts-container">
-          <div class="graph-container">
-            <canvas id="dispertion-graph" class="graph"></canvas>
+      <section class="charts-container">
+        <div class="graph-container">
+          <canvas id="dispertion-graph" class="graph"></canvas>
+        </div>
+        <div class="growth-container">
+          <div>
+            <p>Total nacimientos: <strong id="total-nacidos"> - </strong></p>
           </div>
-          <div class="growth-container">
-            <div>
-              <p>Total nacimientos: <strong id="total-nacidos"> - </strong></p>
-            </div>
-            <div>
-              <p>Total muertes: <strong id="total-muertos"> - </strong></p>
-            </div>
+          <div>
+            <p>Total muertes: <strong id="total-muertos"> - </strong></p>
           </div>
-          <div class="graph-container">
-            <canvas id="linear-graph" class="graph"></canvas>
-          </div>
-        </section>
+        </div>
+        <div class="graph-container">
+          <canvas id="linear-graph" class="graph"></canvas>
+        </div>
+      </section>
       <!-- </section> -->
       <section class="form-container">
         <form class="form" id="form">
@@ -94,7 +96,12 @@
             <button class="button" type="submit">
               Calcular crecimiento
             </button>
-            <button class="button" type="button" onclick="clean()" style="background-color: #7c7c7c;">
+            <button
+              class="button"
+              type="button"
+              onclick="clean()"
+              style="background-color: #7c7c7c;"
+            >
               Limpiar
             </button>
           </div>
