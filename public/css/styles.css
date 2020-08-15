@@ -74,6 +74,7 @@ main {
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   padding: 20px;
+  justify-items: center;
 }
 
 .form {
@@ -86,9 +87,14 @@ main {
 .charts-container {
   background-color: white;
   border-radius: 20px;
-  padding: 15px 45px 15px;
+  padding: 15px 45px 5px;
   box-shadow: var(--shadows);
   /* box-shadow: 5px 6px 20px 10px #c5c5c54f; */
+  width: 500px;
+}
+
+.form-container{
+  width: 710px;
 }
 
 .form__stats {
