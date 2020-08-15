@@ -13,12 +13,9 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
     <!-- include only the Firebase features as you need -->
-    <!--  <script src="/__/firebase/7.17.1/firebase-app.js"></script> -->
-    <!-- <script defer src="/__/firebase/7.17.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.17.1/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.17.1/firebase-storage.js"></script> -->
-    <!-- initialize the SDK after all desired features are loaded -->
-    <!--  <script defer src="/__/firebase/init.js"></script> -->
+    <script src="/__/firebase/7.2.3/firebase-app.js"></script>
+    <script src="/__/firebase/7.2.3/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
   </head>
   <body>
     <header>
@@ -29,33 +26,25 @@
 
     <section class="history-container">
       <h2>Historial</h2>
-      <table class="table text-center">
+      <div class="spinner" id="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+      <table id="table" class="table text-center">
         <thead class="primary">
           <tr>
-            <th>ID</th>
+            <th>Fecha</th>
             <th>Población</th>
             <th>Años</th>
             <th>Tasas</th>
             <th>Resultados</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Item 1</td>
-            <td>$1</td>
-            <td>$1</td>
-            <td>$1</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Item 2</td>
-            <td>$2</td>
-            <td>$1</td>
-            <td>$1</td>
-          </tr>
-        </tbody>
+        <tbody id="history"></tbody>
       </table>
     </section>
+    <script src="./js/firebase.js"></script>
+    <script src="./js/history.js"></script>
   </body>
 </html>
