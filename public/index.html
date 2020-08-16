@@ -4,51 +4,66 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="shortcut icon" href="../logo.png" />
     <title>Crecimiento Poblacional</title>
-
-    <!-- update the version number as needed -->
-    <!-- <script defer src="/__/firebase/7.17.1/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-    <!-- <script defer src="/__/firebase/7.17.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.17.1/firebase-database.js"></script>
+    <!--  <script src="/__/firebase/7.17.1/firebase-app.js"></script> -->
+    <!-- <script defer src="/__/firebase/7.17.1/firebase-database.js"></script>
     <script defer src="/__/firebase/7.17.1/firebase-messaging.js"></script>
     <script defer src="/__/firebase/7.17.1/firebase-storage.js"></script> -->
     <!-- initialize the SDK after all desired features are loaded -->
-    <!-- <script defer src="/__/firebase/init.js"></script> -->
+    <!--  <script defer src="/__/firebase/init.js"></script> -->
   </head>
   <body>
     <header>
-      <h1>Crecimiento Poblacional</h1>
+      <div style="display: inline-block;">
+        <a href="index.html"><h1>Crecimiento Poblacional</h1></a>
+      </div>
+      <div style="float: right;">
+        <!-- <button class="button" style="width: fit-content; height: fit-content; margin-top: 0; font-size: 1rem;">info</button> -->
+        <div class="dropdown">
+          <button class="dropbtn">
+            More +
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="https://github.com/Misael1998/ts-ejercicio">Repositorio</a>
+            <a href="history.html">Historial</a>
+          </div>
+        </div>
+      </div>
     </header>
     <main>
+      <!-- <section class="form-container"> -->
       <section class="charts-container">
         <div class="graph-container">
           <canvas id="dispertion-graph" class="graph"></canvas>
         </div>
         <div class="growth-container">
           <div>
-            <p>Total nacimientos: <strong>450</strong></p>
+            <p>Total nacimientos: <strong id="total-nacidos"> - </strong></p>
           </div>
           <div>
-            <p>Total muertes: <strong>200</strong></p>
+            <p>Total muertes: <strong id="total-muertos"> - </strong></p>
           </div>
         </div>
         <div class="graph-container">
           <canvas id="linear-graph" class="graph"></canvas>
         </div>
       </section>
+      <!-- </section> -->
       <section class="form-container">
         <form class="form" id="form">
           <div class="form__main-inputs">
             <div class="form__input">
-              <label class="input__label" for="poblacion-inicial"
-                >Población inicial</label
-              >
-              <input type="text" id="poblacion-inicial" />
+              <label class="input__label" for="poblacion-inicial">
+                Población inicial
+              </label>
+              <input type="number" id="poblacion-inicial" />
             </div>
             <div class="form__input">
               <label class="input__label" for="anios">Años</label>
-              <input type="text" id="anios" />
+              <input type="number" id="anios" />
             </div>
           </div>
           <div class="form__stats">
@@ -56,32 +71,37 @@
               <label class="input__label" for="tasa-mortalidad"
                 >Tasa de mortalidad
               </label>
-              <input type="text" id="tasa-mortalidad" />
+              <input type="number" id="tasa-mortalidad" />
             </div>
             <div class="form__input">
               <label class="input__label" for="tasa-natalidad"
                 >Tasa de natalidad
               </label>
-              <input type="text" id="tasa-natalidad" />
+              <input type="number" id="tasa-natalidad" />
             </div>
             <div class="form__input">
               <label class="input__label" for="tasa-migracion"
                 >Tasa de migración
               </label>
-              <input type="text" id="tasa-migracion" />
+              <input type="number" id="tasa-migracion" />
             </div>
             <div class="form__input">
               <label class="input__label" for="tasa-inmigracion"
                 >Tasa de inmigración
               </label>
-              <input type="text" id="tasa-inmigracion" />
+              <input type="number" id="tasa-inmigracion" />
             </div>
           </div>
           <div class="button-container">
             <button class="button" type="submit">
               Calcular crecimiento
             </button>
-            <button class="button" type="submit">
+            <button
+              class="button"
+              type="button"
+              onclick="clean()"
+              style="background-color: #7c7c7c;"
+            >
               Limpiar
             </button>
           </div>
@@ -89,19 +109,19 @@
         <section class="stats-container">
           <div class="stat-card">
             <h3>Natalidad</h3>
-            <p>1</p>
+            <p id="c-tasa-nat">0</p>
           </div>
           <div class="stat-card">
             <h3>Mortalidad</h3>
-            <p>1</p>
+            <p id="c-tasa-mot">0</p>
           </div>
           <div class="stat-card">
             <h3>Emigración</h3>
-            <p>1</p>
+            <p id="c-tasa-em">0</p>
           </div>
           <div class="stat-card">
             <h3>Inmigración</h3>
-            <p>1</p>
+            <p id="c-tasa-in">0</p>
           </div>
         </section>
       </section>
@@ -109,34 +129,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="./js/crecimiento.js"></script>
-    <script src="./js/chart.js"></script>
     <script src="./js/index.js"></script>
-    <!-- <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = ["auth", "database", "messaging", "storage"].filter(
-            (feature) => typeof app[feature] === "function"
-          );
-          document.getElementById(
-            "load"
-          ).innerHTML = `Firebase SDK loaded with ${features.join(", ")}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById("load").innerHTML =
-            "Error loading the Firebase SDK, check the console.";
-        }
-      });
-    </script> -->
   </body>
 </html>
