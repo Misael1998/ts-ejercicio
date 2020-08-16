@@ -13,3 +13,5 @@ La salida es producida por la siguiente fórmula:
 **Preview:**
 
 <img src="./design/simulador.png">
+
+<img src="./design/historial.png">
